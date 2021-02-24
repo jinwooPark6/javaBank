@@ -8,48 +8,20 @@ public class Detail{
 	Date d = new Date();
 	SimpleDateFormat formatType = new SimpleDateFormat("yyyy년MM월dd일HH시mm분");
 	
-	private Date dealDay;
-	private Date dealTime;
-	private String classify;
-	private int dealMoney;
-	private int balance;
+	private Date dealTime; //거래일
+	private String classify; //입출금구분
+	private int dealMoney; //거래금액
+	private int balance; //잔고
 	
-	public Detail(Date dealDay, Date dealTime, String classify, int dealMoney, int balance) {
-		this.dealDay = dealDay;
+	public Detail(Date dealTime, String classify, int dealMoney, int balance) {
 		this.dealTime = dealTime;
 		this.classify = classify;
 		this.dealMoney = dealMoney;
 		this.balance = balance;
 	}
 	
-	public Date getDealTime() {
-		return dealTime;
-	}
-	public void setDealTime(Date dealTime) {
-		this.dealTime = dealTime;
-	}
-	public String getClassify() {
-		return classify;
-	}
-	public void setClassify(String classify) {
-		this.classify = classify;
-	}
-	public int getDealMoney() {
-		return dealMoney;
-	}
-	public void setDealMoney(int dealMoney) {
-		this.dealMoney = dealMoney;
-	}
-	public int getBalance() {
-		return balance;
-	}
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
 	@Override
 	public String toString() {
-		return "[거래금액: "+ dealMoney + "원, " + "잔액: " + balance + "/" + formatType.format(d)+ "]";
+		return "[거래금액: "+ dealMoney + "원" + ", 구분:" + classify + ", 잔액:" + balance + "원 /" + formatType.format(d)+ "]";
 	}
-	
-	
 }
